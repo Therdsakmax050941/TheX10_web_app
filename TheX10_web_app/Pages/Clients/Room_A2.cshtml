@@ -1,0 +1,55 @@
+﻿@page
+@model TheX10_web_app.Pages.Clients.a2Model
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans+Thai+Looped:wght@100;200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans+Thai+Looped:wght@100;200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/StyleSheet.css" />
+
+
+@foreach (var item in Model.listClients_a2)
+{
+    <div class="text-center">
+        <h2 class="font2">สวัสดีคุณ : @item.RSV_NAME1</h2>
+        <h3 class="font2"> HOME : @item.ROOM_NO | จำนวนคน @item.PEOPLE </h3>
+        
+    </div>
+    <hr />
+    <br />
+    <br />
+
+<div class="text-center">
+    <h4 class="font-en">SET 1</h4>
+</div>
+<br />
+<form>
+<div class="row">
+
+    <div class="column">
+        <div class="card"><img src="/image/menu.jpg" /></div>
+        <input type="number" id="set1.1" value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1"  autofocus required/>
+    </div>
+    <div class="column">
+        <div class="card"><img src="/image/menu.jpg" /></div>
+            <input type="number" id="set1.2" value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1" />
+    </div>
+    <div class="column">
+        <div class="card"><img src="/image/menu.jpg" /></div>
+            <input  type="number" id="1.3" value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1" />
+    </div>
+    <div class="column">
+        <div class="card"><img src="/image/menu.jpg" /></div>
+            <input type="number" id="1.4" value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1" />
+    </div>
+</div>
+</form>
+}

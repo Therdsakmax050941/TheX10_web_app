@@ -1,0 +1,170 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+    margin: 0 -5px;
+}
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+.font {
+    font-family: 'Charmonman', cursive;
+}
+.font2 {
+    font-family: 'Charmonman', cursive;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+}
+.font-en {
+    font-family: 'Charmonman', cursive;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+}
+.bg_body {
+    background-color: midnightblue;
+}
+.back {
+    text-align: left;
+
+}
+
+
+/* Actual input */
+
+.input-number {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 2px;
+}
+
+    .input-number span {
+        position: absolute;
+        left: 50%;
+        margin-left: -20px;
+        display: inline-block;
+        background-color: white;
+        height: 100%;
+        width: 40px;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+        color: #6C6DFF;
+        letter-spacing: -1px;
+    }
+
+    .input-number button {
+        display: inline-block;
+        width: 50px;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: rgba(255,255,255,.2);
+        transition: background-color .2s ease;
+    }
+
+        .input-number button:nth-of-type(1) {
+            padding-right: 20px
+        }
+
+        .input-number button:nth-of-type(2) {
+            padding-left: 20px;
+        }
+
+       .input-number button:hover {
+            background-color: rgba(255,255,255,.25);
+        }
+.text-move {
+    text-indent: 50%;
+}
+span {
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+}
+
+    span a {
+        font-size: 19px;
+        letter-spacing: 1px;
+        transform-style: preserve-3d;
+        transform: translateZ(-25px);
+        transition: transform .25s;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+        span a:before,
+        span a:after {
+            position: absolute;
+            content: "BUTTON";
+            height: 55px;
+            width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid black;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        span a:before {
+            color: #fff;
+            background: #000;
+            transform: rotateY(0deg) translateZ(25px);
+        }
+
+        span a:after {
+            color: #000;
+            transform: rotateX(90deg) translateZ(25px);
+        }
+
+        span a:hover {
+            transform: translateZ(-25px) rotateX(-90deg);
+        }

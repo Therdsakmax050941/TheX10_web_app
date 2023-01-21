@@ -1,0 +1,54 @@
+﻿@page
+@model TheX10_web_app.Pages.Clients.Check_in_allModel
+@{
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans+Thai+Looped:wght@100;200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans+Thai+Looped:wght@100;200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/table.css" />
+
+
+
+
+
+<table>
+<thead>
+    <h1 class="font"> ผู้เข้าพักประจำวัน</h1>
+        </thead>
+    <tr>
+        <th>#</th>
+            <th>บ้าน</th>
+            <th>ชื่อผุู้เข้าพัก</th>
+            <th>จำนวนผู้เข้าพัก</th>
+            <th>TIME</th>
+    <tr />
+
+<tbody>
+@foreach (var item in Model.listClients)
+{
+
+            
+
+    <tr>
+        <td>@item.RECORD_ID</td>
+        <td>@item.ROOM_NO</td>
+        <td>@item.RSV_NAME1</td>
+        <td>@item.PEOPLE</td>
+        <td>@item.CHECK_IN</td>
+    </tr>
+  
+}
+        </thead>
+</table>
+

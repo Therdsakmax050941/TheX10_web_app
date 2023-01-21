@@ -1,0 +1,87 @@
+﻿@page
+@model TheX10_web_app.Pages.Clients.a1Model
+@{
+    @foreach (var item in Model.listClients_a1)
+    {
+        var Name = item.RSV_NAME1;
+        var Room = item.ROOM_NO;
+        var Check_in = item.CHECK_IN;
+    }
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans+Thai+Looped:wght@100;200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans+Thai+Looped:wght@100;200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/StyleSheet.css" />
+<link rel="stylesheet" href="/css/StyleSheet1.css" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
+<script src="~/js/site.js"></script>
+
+
+
+<body>
+
+@foreach (var item in Model.listClients_a1)
+{
+        <a class="back" asp-area="" asp-page="/index"><img src="~/image/arrow.jpg" width="40px" /></a>
+<div class="text-center">
+    <h2 class="font2">สวัสดีคุณ : @item.RSV_NAME1</h2>
+        <h3 class="font2"> HOME : @item.ROOM_NO | จำนวนคน : @item.PEOPLE </h3>
+</div>
+<hr />
+<br />
+<br />
+
+<div class="text-center">
+    <h4 class="font-en">SET 1</h4>
+</div>
+<br />
+        
+        
+               <form method="POST">
+            <div class="row">
+                        <div class="column">
+                            <div class="card"><img src="/image/menu.jpg" /></div>
+                            <div class="text-center">
+                            <input type="number" name="set1" value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card"><img src="/image/menu.jpg" /></div>
+                            <div class="text-center">
+                            <input type="number"  name="set2" value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card"><img src="/image/menu.jpg" /></div>
+                            <div class="text-center">
+                            <input type="number" name="set4"  value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card"><img src="/image/menu.jpg" /></div>
+                            <div class="text-center">
+                            <input type="number" name="set4"  value="@item.PEOPLE" min="0" max="@item.PEOPLE" step="1" />
+                            </div>
+                        </div>
+                    </div>
+               
+            
+                        	<section class="text-center">
+		                        <button class="ladda-button orange contract-overlay" style="z-index: 10;"><span class="label">Submit</span> <span class="spinner"></span></button>
+	                        </section>
+           
+            </form>
+
+    }
+    </body>
